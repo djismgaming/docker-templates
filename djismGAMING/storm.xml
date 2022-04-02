@@ -3,7 +3,7 @@
   <Name>storm</Name>
   <Repository>ghcr.io/relvacode/storm</Repository>
   <Registry>https://hub.docker.com/r/relvacode/storm</Registry>
-  <Network>linuxserver</Network>
+  <Network>bridge</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
@@ -34,7 +34,7 @@ You should also seriously consider the use of HTTPS over the internet, with serv
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1648867307</DateInstalled>
+  <DateInstalled>1648867398</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Description>Introducing Storm&#xD;
@@ -56,7 +56,7 @@ You should also seriously consider the use of HTTPS over the internet, with serv
 &#xD;
 </Description>
   <Networking>
-    <Mode>linuxserver</Mode>
+    <Mode>bridge</Mode>
     <Publish>
       <Port>
         <HostPort>8221</HostPort>
@@ -68,17 +68,17 @@ You should also seriously consider the use of HTTPS over the internet, with serv
   <Data/>
   <Environment>
     <Variable>
-      <Value/>
+      <Value>deluge</Value>
       <Name>DELUGE_RPC_HOSTNAME</Name>
       <Mode/>
     </Variable>
     <Variable>
-      <Value/>
+      <Value>user</Value>
       <Name>DELUGE_RPC_USERNAME</Name>
       <Mode/>
     </Variable>
     <Variable>
-      <Value/>
+      <Value>password</Value>
       <Name>DELUGE_RPC_PASSWORD</Name>
       <Mode/>
     </Variable>
@@ -90,8 +90,8 @@ You should also seriously consider the use of HTTPS over the internet, with serv
   </Environment>
   <Labels/>
   <Config Name="WebUI" Target="8221" Default="8221" Mode="tcp" Description="WebUI port to access your deluge installation via storm" Type="Port" Display="always" Required="false" Mask="false">8221</Config>
-  <Config Name="DELUGE_RPC_HOSTNAME" Target="DELUGE_RPC_HOSTNAME" Default="deluge" Mode="" Description="Change this to the current name for the deluge container you want to connect storm's webUI to" Type="Variable" Display="always" Required="true" Mask="false"/>
-  <Config Name="DELUGE_RPC_USERNAME" Target="DELUGE_RPC_USERNAME" Default="user" Mode="" Description="The username storm will use to connect to the deluge container. &#13;&#10;&#13;&#10;Set this in appdata\deluge\auth file" Type="Variable" Display="always" Required="true" Mask="false"/>
-  <Config Name="DELUGE_RPC_PASSWORD" Target="DELUGE_RPC_PASSWORD" Default="password" Mode="" Description="The password storm will use to connect to the deluge container. &#13;&#10;&#13;&#10;Set this in appdata\deluge\auth file" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="DELUGE_RPC_HOSTNAME" Target="DELUGE_RPC_HOSTNAME" Default="deluge" Mode="" Description="Change this to the current name for the deluge container you want to connect storm's webUI to" Type="Variable" Display="always" Required="true" Mask="false">deluge</Config>
+  <Config Name="DELUGE_RPC_USERNAME" Target="DELUGE_RPC_USERNAME" Default="user" Mode="" Description="The username storm will use to connect to the deluge container. &#13;&#10;&#13;&#10;Set this in appdata\deluge\auth file" Type="Variable" Display="always" Required="true" Mask="false">user</Config>
+  <Config Name="DELUGE_RPC_PASSWORD" Target="DELUGE_RPC_PASSWORD" Default="password" Mode="" Description="The password storm will use to connect to the deluge container. &#13;&#10;&#13;&#10;Set this in appdata\deluge\auth file" Type="Variable" Display="always" Required="true" Mask="false">password</Config>
   <Config Name="DELUGE_RPC_VERSION" Target="DELUGE_RPC_VERSION" Default="v2|v1" Mode="" Description="RPC connection version to use.&#13;&#10;Depends on your deluge version." Type="Variable" Display="always" Required="true" Mask="false">v2</Config>
 </Container>
