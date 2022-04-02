@@ -13,18 +13,21 @@
 &#xD;
 A slick remote interface for Deluge that fully supports mobile devices (including as a home-screen app)&#xD;
 &#xD;
-You'll need a Deluge container running with a valid auth configuration as shown here: https://dev.deluge-torrent.org/wiki/UserGuide/Authentication&#xD;
-Storm needs a way to contact the Deluge RPC daemon so it's best that you create a Docker network and attach the Storm container to that network.&#xD;
-Once that's setup you'll need to configure Deluge to allow remote RPC connections:&#xD;
- - Open up core.conf in your Deluge configuration folder and set&#xD;
+Some neccesary steps:&#xD;
+&#xD;
+- You'll need a Deluge container running with a valid auth configuration as shown here: https://dev.deluge-torrent.org/wiki/UserGuide/Authentication&#xD;
+- Storm needs a way to contact the Deluge RPC daemon so it's best that you create a Docker network and attach the Storm container to that network.&#xD;
+- Once that's setup you'll need to configure Deluge to allow remote RPC connections:&#xD;
+  - Open up core.conf in your Deluge configuration folder and set&#xD;
     - "allow_remote": true&#xD;
 &#xD;
 Security&#xD;
 &#xD;
 By default, Storm does not authenticate requests made to the API. When serving Storm over the public internet you should ensure access to your Deluge daemon is properly secured.&#xD;
- - Storm comes with a simple built-in authentication mechanism which can be enabled with the environment variable STORM_API_KEY or the command-line option --api-key.&#xD;
-    - Set this to a reasonably secure password. Any requests made to Storm must now provide the API key in the request.&#xD;
-You should also seriously consider the use of HTTPS over the internet, with services like LetsEncrypt it's relatively easy to get a valid SSL certificate for free.&#xD;
+  - Storm comes with a simple built-in authentication mechanism which can be enabled with&#xD;
+     the environment variable STORM_API_KEY or the command-line option --api-key.&#xD;
+  - Set this to a reasonably secure password. Any requests made to Storm must now provide the API key in the request.&#xD;
+  - You should also seriously consider the use of HTTPS over the internet, with services like LetsEncrypt it's relatively easy to get a valid SSL certificate for free.&#xD;
 &#xD;
 </Overview>
   <Category>Downloaders: Status:Stable</Category>
@@ -34,25 +37,28 @@ You should also seriously consider the use of HTTPS over the internet, with serv
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1648867398</DateInstalled>
+  <DateInstalled>1648930598</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Description>Introducing Storm&#xD;
 &#xD;
 A slick remote interface for Deluge that fully supports mobile devices (including as a home-screen app)&#xD;
 &#xD;
-You'll need a Deluge container running with a valid auth configuration as shown here: https://dev.deluge-torrent.org/wiki/UserGuide/Authentication&#xD;
-Storm needs a way to contact the Deluge RPC daemon so it's best that you create a Docker network and attach the Storm container to that network.&#xD;
-Once that's setup you'll need to configure Deluge to allow remote RPC connections:&#xD;
- - Open up core.conf in your Deluge configuration folder and set&#xD;
+Some neccesary steps:&#xD;
+&#xD;
+- You'll need a Deluge container running with a valid auth configuration as shown here: https://dev.deluge-torrent.org/wiki/UserGuide/Authentication&#xD;
+- Storm needs a way to contact the Deluge RPC daemon so it's best that you create a Docker network and attach the Storm container to that network.&#xD;
+- Once that's setup you'll need to configure Deluge to allow remote RPC connections:&#xD;
+  - Open up core.conf in your Deluge configuration folder and set&#xD;
     - "allow_remote": true&#xD;
 &#xD;
 Security&#xD;
 &#xD;
 By default, Storm does not authenticate requests made to the API. When serving Storm over the public internet you should ensure access to your Deluge daemon is properly secured.&#xD;
- - Storm comes with a simple built-in authentication mechanism which can be enabled with the environment variable STORM_API_KEY or the command-line option --api-key.&#xD;
-    - Set this to a reasonably secure password. Any requests made to Storm must now provide the API key in the request.&#xD;
-You should also seriously consider the use of HTTPS over the internet, with services like LetsEncrypt it's relatively easy to get a valid SSL certificate for free.&#xD;
+  - Storm comes with a simple built-in authentication mechanism which can be enabled with&#xD;
+     the environment variable STORM_API_KEY or the command-line option --api-key.&#xD;
+  - Set this to a reasonably secure password. Any requests made to Storm must now provide the API key in the request.&#xD;
+  - You should also seriously consider the use of HTTPS over the internet, with services like LetsEncrypt it's relatively easy to get a valid SSL certificate for free.&#xD;
 &#xD;
 </Description>
   <Networking>
@@ -68,17 +74,17 @@ You should also seriously consider the use of HTTPS over the internet, with serv
   <Data/>
   <Environment>
     <Variable>
-      <Value>deluge</Value>
+      <Value/>
       <Name>DELUGE_RPC_HOSTNAME</Name>
       <Mode/>
     </Variable>
     <Variable>
-      <Value>user</Value>
+      <Value/>
       <Name>DELUGE_RPC_USERNAME</Name>
       <Mode/>
     </Variable>
     <Variable>
-      <Value>password</Value>
+      <Value/>
       <Name>DELUGE_RPC_PASSWORD</Name>
       <Mode/>
     </Variable>
@@ -90,8 +96,8 @@ You should also seriously consider the use of HTTPS over the internet, with serv
   </Environment>
   <Labels/>
   <Config Name="WebUI" Target="8221" Default="8221" Mode="tcp" Description="WebUI port to access your deluge installation via storm" Type="Port" Display="always" Required="false" Mask="false">8221</Config>
-  <Config Name="DELUGE_RPC_HOSTNAME" Target="DELUGE_RPC_HOSTNAME" Default="deluge" Mode="" Description="Change this to the current name for the deluge container you want to connect storm's webUI to" Type="Variable" Display="always" Required="true" Mask="false">deluge</Config>
-  <Config Name="DELUGE_RPC_USERNAME" Target="DELUGE_RPC_USERNAME" Default="user" Mode="" Description="The username storm will use to connect to the deluge container. &#13;&#10;&#13;&#10;Set this in appdata\deluge\auth file" Type="Variable" Display="always" Required="true" Mask="false">user</Config>
-  <Config Name="DELUGE_RPC_PASSWORD" Target="DELUGE_RPC_PASSWORD" Default="password" Mode="" Description="The password storm will use to connect to the deluge container. &#13;&#10;&#13;&#10;Set this in appdata\deluge\auth file" Type="Variable" Display="always" Required="true" Mask="false">password</Config>
+  <Config Name="DELUGE_RPC_HOSTNAME" Target="DELUGE_RPC_HOSTNAME" Default="" Mode="" Description="Change this to the current name for the deluge container you want to connect storm's webUI to" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="DELUGE_RPC_USERNAME" Target="DELUGE_RPC_USERNAME" Default="" Mode="" Description="The username storm will use to connect to the deluge container. &#13;&#10;&#13;&#10;Set this in appdata\deluge\auth file" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="DELUGE_RPC_PASSWORD" Target="DELUGE_RPC_PASSWORD" Default="" Mode="" Description="The password storm will use to connect to the deluge container. &#13;&#10;&#13;&#10;Set this in appdata\deluge\auth file" Type="Variable" Display="always" Required="true" Mask="false"/>
   <Config Name="DELUGE_RPC_VERSION" Target="DELUGE_RPC_VERSION" Default="v2|v1" Mode="" Description="RPC connection version to use.&#13;&#10;Depends on your deluge version." Type="Variable" Display="always" Required="true" Mask="false">v2</Config>
 </Container>
