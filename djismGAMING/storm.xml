@@ -15,19 +15,27 @@ A slick remote interface for Deluge that fully supports mobile devices (includin
 &#xD;
 Some neccesary steps:&#xD;
 &#xD;
-- You'll need a Deluge container running with a valid auth configuration as shown here: https://dev.deluge-torrent.org/wiki/UserGuide/Authentication&#xD;
-- Storm needs a way to contact the Deluge RPC daemon so it's best that you create a Docker network and attach the Storm container to that network.&#xD;
+- You'll need a Deluge container running with a valid auth configuration&#xD;
+  as shown here: https://dev.deluge-torrent.org/wiki/UserGuide/Authentication&#xD;
+- Storm needs a way to contact the Deluge RPC daemon so it's best that you&#xD;
+  create a Docker network and attach the Storm container to that network.&#xD;
 - Once that's setup you'll need to configure Deluge to allow remote RPC connections:&#xD;
-  - Open up core.conf in your Deluge configuration folder and set&#xD;
-    - "allow_remote": true&#xD;
+  - Open up core.conf in your Deluge configuration folder&#xD;
+    -  set "allow_remote": true&#xD;
 &#xD;
 Security&#xD;
 &#xD;
-By default, Storm does not authenticate requests made to the API. When serving Storm over the public internet you should ensure access to your Deluge daemon is properly secured.&#xD;
-  - Storm comes with a simple built-in authentication mechanism which can be enabled with&#xD;
-     the environment variable STORM_API_KEY or the command-line option --api-key.&#xD;
-  - Set this to a reasonably secure password. Any requests made to Storm must now provide the API key in the request.&#xD;
-  - You should also seriously consider the use of HTTPS over the internet, with services like LetsEncrypt it's relatively easy to get a valid SSL certificate for free.&#xD;
+By default, Storm does not authenticate requests made to the API.&#xD;
+When serving Storm over the public internet you should ensure access&#xD;
+to your Deluge daemon is properly secured.&#xD;
+&#xD;
+  - Storm comes with a simple built-in authentication mechanism which can&#xD;
+    be enabled with the environment variable STORM_API_KEY or&#xD;
+    the command-line option --api-key.&#xD;
+  - Set this to a reasonably secure password.&#xD;
+    Any requests made to Storm must now provide the API key in the request.&#xD;
+  - You should also seriously consider the use of HTTPS over the internet,&#xD;
+    with services like LetsEncrypt it's relatively easy to get a valid SSL certificate for free.&#xD;
 &#xD;
 </Overview>
   <Category>Downloaders: Status:Stable</Category>
@@ -37,7 +45,7 @@ By default, Storm does not authenticate requests made to the API. When serving S
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1648930598</DateInstalled>
+  <DateInstalled>1648930947</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Description>Introducing Storm&#xD;
@@ -46,19 +54,27 @@ A slick remote interface for Deluge that fully supports mobile devices (includin
 &#xD;
 Some neccesary steps:&#xD;
 &#xD;
-- You'll need a Deluge container running with a valid auth configuration as shown here: https://dev.deluge-torrent.org/wiki/UserGuide/Authentication&#xD;
-- Storm needs a way to contact the Deluge RPC daemon so it's best that you create a Docker network and attach the Storm container to that network.&#xD;
+- You'll need a Deluge container running with a valid auth configuration&#xD;
+  as shown here: https://dev.deluge-torrent.org/wiki/UserGuide/Authentication&#xD;
+- Storm needs a way to contact the Deluge RPC daemon so it's best that you&#xD;
+  create a Docker network and attach the Storm container to that network.&#xD;
 - Once that's setup you'll need to configure Deluge to allow remote RPC connections:&#xD;
-  - Open up core.conf in your Deluge configuration folder and set&#xD;
-    - "allow_remote": true&#xD;
+  - Open up core.conf in your Deluge configuration folder&#xD;
+    -  set "allow_remote": true&#xD;
 &#xD;
 Security&#xD;
 &#xD;
-By default, Storm does not authenticate requests made to the API. When serving Storm over the public internet you should ensure access to your Deluge daemon is properly secured.&#xD;
-  - Storm comes with a simple built-in authentication mechanism which can be enabled with&#xD;
-     the environment variable STORM_API_KEY or the command-line option --api-key.&#xD;
-  - Set this to a reasonably secure password. Any requests made to Storm must now provide the API key in the request.&#xD;
-  - You should also seriously consider the use of HTTPS over the internet, with services like LetsEncrypt it's relatively easy to get a valid SSL certificate for free.&#xD;
+By default, Storm does not authenticate requests made to the API.&#xD;
+When serving Storm over the public internet you should ensure access&#xD;
+to your Deluge daemon is properly secured.&#xD;
+&#xD;
+  - Storm comes with a simple built-in authentication mechanism which can&#xD;
+    be enabled with the environment variable STORM_API_KEY or&#xD;
+    the command-line option --api-key.&#xD;
+  - Set this to a reasonably secure password.&#xD;
+    Any requests made to Storm must now provide the API key in the request.&#xD;
+  - You should also seriously consider the use of HTTPS over the internet,&#xD;
+    with services like LetsEncrypt it's relatively easy to get a valid SSL certificate for free.&#xD;
 &#xD;
 </Description>
   <Networking>
