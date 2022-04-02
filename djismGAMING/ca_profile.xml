@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Maintainer>
-  <Icon>https://raw.githubusercontent.com/ich777/docker-templates/master/ich777/images/avatar.jpg</Icon>
+  <Icon>https://raw.githubusercontent.com/djismgaming/docker-templates/main/djismGAMING/img/me.jpg</Icon>
   <Profile>
     Helping other developers get their great applications published as an unRAID template. :D
   </Profile>
   <DonateLink>https://www.paypal.com/paypalme/isma</DonateLink>
   <DonateText>If I helped you in some way, please consider Donating.</DonateText>
+  <Twitter>https://twitter.com/djismgaming</Twitter>
 </Maintainer>

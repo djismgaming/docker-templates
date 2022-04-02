@@ -2,7 +2,7 @@
 <Container version="2">
   <Name>storm</Name>
   <Repository>ghcr.io/relvacode/storm</Repository>
-  <Registry>https://hub.docker.com/r/relvacode/storm</Registry>
+  <Registry>https://github.com/relvacode/storm/pkgs/container/storm</Registry>
   <Network>bridge</Network>
   <MyIP/>
   <Shell>sh</Shell>
