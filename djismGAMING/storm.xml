@@ -45,7 +45,7 @@ to your Deluge daemon is properly secured.&#xD;
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1648930947</DateInstalled>
+  <DateInstalled>1649774125</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Description>Introducing Storm&#xD;
@@ -109,6 +109,11 @@ to your Deluge daemon is properly secured.&#xD;
       <Name>DELUGE_RPC_VERSION</Name>
       <Mode/>
     </Variable>
+    <Variable>
+      <Value/>
+      <Name>STORM_API_KEY</Name>
+      <Mode/>
+    </Variable>
   </Environment>
   <Labels/>
   <Config Name="WebUI" Target="8221" Default="8221" Mode="tcp" Description="WebUI port to access your deluge installation via storm" Type="Port" Display="always" Required="false" Mask="false">8221</Config>
@@ -116,4 +121,5 @@ to your Deluge daemon is properly secured.&#xD;
   <Config Name="DELUGE_RPC_USERNAME" Target="DELUGE_RPC_USERNAME" Default="" Mode="" Description="The username storm will use to connect to the deluge container. &#13;&#10;&#13;&#10;Set this in appdata\deluge\auth file" Type="Variable" Display="always" Required="true" Mask="false"/>
   <Config Name="DELUGE_RPC_PASSWORD" Target="DELUGE_RPC_PASSWORD" Default="" Mode="" Description="The password storm will use to connect to the deluge container. &#13;&#10;&#13;&#10;Set this in appdata\deluge\auth file" Type="Variable" Display="always" Required="true" Mask="false"/>
   <Config Name="DELUGE_RPC_VERSION" Target="DELUGE_RPC_VERSION" Default="v2|v1" Mode="" Description="RPC connection version to use.&#13;&#10;Depends on your deluge version." Type="Variable" Display="always" Required="true" Mask="false">v2</Config>
+  <Config Name="STORM_API_KEY" Target="STORM_API_KEY" Default="" Mode="" Description="Set this to a reasonably secure password.&#13;&#10;Any requests made to Storm must now provide the API key in the request." Type="Variable" Display="always" Required="false" Mask="false"/>
 </Container>
