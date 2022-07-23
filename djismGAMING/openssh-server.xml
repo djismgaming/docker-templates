@@ -16,6 +16,87 @@
   <Category>Network:Management</Category>
   <TemplateURL>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/openssh-server.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/openssh-server-icon.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1649774125</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Added as the linuxserver one is not appearing in the Custom Applications at this moment. Openssh-server is a sandboxed environment that allows ssh access without giving keys to the entire server. 
+  Giving ssh access via private key often means giving full access to the server. 
+  This container creates a limited and sandboxed environment that others can ssh into. 
+  The users only have access to the folders mapped and the processes running inside this container.[br]
+  Application setup: see https://github.com/linuxserver/docker-openssh-server#application-setup
+  </Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>2222</HostPort>
+        <ContainerPort>2222</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data/>
+  <Environment>
+    <Variable>
+      <Value/>
+      <Name>PUID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>PGID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>PUBLIC_KEY</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>
+      <Name>PUBLIC_KEY_FILE</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>USER_NAME</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>SUDO_ACCESS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>PASSWORD_ACCESS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>USER_PASSWORD</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>SUDO_ACCESS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>SUDO_ACCESS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>SUDO_ACCESS</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
   <Config Name="Key 1" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="Key 2" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="SSH Port" Target="2222" Default="2222" Mode="tcp" Description="Container Port: 2222" Type="Port" Display="always" Required="true" Mask="false"/>
