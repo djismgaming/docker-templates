@@ -24,7 +24,7 @@ Application setup: see https://github.com/linuxserver/docker-openssh-server#appl
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1658599768</DateInstalled>
+  <DateInstalled>1658600217</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Requires/>
@@ -33,9 +33,9 @@ Application setup: see https://github.com/linuxserver/docker-openssh-server#appl
   <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
   <Config Name="Public Key" Target="PUBLIC_KEY" Default="" Mode="" Description="Optional ssh public key, which will automatically be added to authorized_keys." Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="Public Key File" Target="PUBLIC_KEY_FILE" Default="" Mode="" Description="Optionally specify a file containing the public key (works with docker secrets)." Type="Variable" Display="always" Required="false" Mask="false"/>
-  <Config Name="User Name" Target="USER_NAME" Default="" Mode="" Description="Optionally specify a user name (Default:linuxserver.io)" Type="Variable" Display="always" Required="false" Mask="false"/>
-  <Config Name="Sudo Access" Target="SUDO_ACCESS" Default="" Mode="" Description="Set to true to allow USER_NAME, the ssh user, sudo access. Without USER_PASSWORD set, this will allow passwordless sudo access." Type="Variable" Display="always" Required="false" Mask="false"/>
-  <Config Name="Password Access" Target="PASSWORD_ACCESS" Default="" Mode="" Description="Set to true to allow user/password ssh access. You will want to set USER_PASSWORD or USER_PASSWORD_FILE as well." Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="User Name" Target="USER_NAME" Default="" Mode="" Description="Optionally specify a user name (Default:linuxserver.io)" Type="Variable" Display="always" Required="false" Mask="false">admin</Config>
+  <Config Name="Sudo Access" Target="SUDO_ACCESS" Default="true|false" Mode="" Description="Set to true to allow USER_NAME, the ssh user, sudo access. Without USER_PASSWORD set, this will allow passwordless sudo access." Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="Password Access" Target="PASSWORD_ACCESS" Default="true|false" Mode="" Description="Set to true to allow user/password ssh access. You will want to set USER_PASSWORD or USER_PASSWORD_FILE as well." Type="Variable" Display="always" Required="false" Mask="false">false</Config>
   <Config Name="User Password" Target="USER_PASSWORD" Default="" Mode="" Description="Optionally set a sudo password for USER_NAME, the ssh user. If this or USER_PASSWORD_FILE are not set but SUDO_ACCESS is set to true, the user will have passwordless sudo access." Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="User Password File" Target="USER_PASSWORD_FILE" Default="" Mode="" Description="Optionally specify a file that contains the password. This setting supersedes the USER_PASSWORD option (works with docker secrets)." Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/openssh-server" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/openssh-server</Config>
