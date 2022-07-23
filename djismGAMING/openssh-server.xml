@@ -80,21 +80,6 @@
       <Name>USER_PASSWORD</Name>
       <Mode/>
     </Variable>
-    <Variable>
-      <Value/>
-      <Name>SUDO_ACCESS</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
-      <Value/>
-      <Name>SUDO_ACCESS</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
-      <Value/>
-      <Name>SUDO_ACCESS</Name>
-      <Mode/>
-    </Variable>
   </Environment>
   <Labels/>
   <Config Name="Key 1" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false"/>
