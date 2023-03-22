@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>mbpfan</Name>
+  <Repository>bplein/mbpfan</Repository>
+  <Registry>https://hub.docker.com/r/bplein/mbpfan</Registry>
+  <Network>none</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>true</Privileged>
+  <Support>https://forums.unraid.net/topic/136764-support-djismgaming-mbpfan-a-fan-controller-for-macs-running-linux/</Support>
+  <Project>https://github.com/linux-on-mac/mbpfan</Project>
+  <Overview>Containerized mbpfan (for Macs running Linux, to control fans)&#xD;
+&#xD;
+NOTE: the executable in the container was compiled by bplein from https://github.com/linux-on-mac/mbpfan.&#xD;
+Uses the Ubuntu repository version of https://github.com/linux-on-mac/mbpfan&#xD;
+&#xD;
+Need to create a configuration file with the following contents and mount it in the container as a volume in the container under /etc/mbpfan.conf:&#xD;
+&#xD;
+File contents of /mnt/user/appdata/mbpfan/mbpfan.conf (example on a Late 2012 i7 Mac mini):&#xD;
+&#xD;
+[general]&#xD;
+# see https://ineed.coffee/3838/a-beginners-tutorial-for-mbpfan-under-ubuntu for the values&#xD;
+min_fan_speed = 1800    # put the *lowest* value of "cat /sys/devices/platform/applesmc.768/fan*_min"&#xD;
+max_fan_speed = 5500    # put the *highest* value of "cat /sys/devices/platform/applesmc.768/fan*_max"&#xD;
+low_temp = 55            # try ranges 55-63, default is 63&#xD;
+high_temp = 66            # try ranges 58-66, default is 66&#xD;
+max_temp = 87            # take highest number returned by "cat /sys/devices/platform/coretemp.*/hwmon/hwmon*/temp*_max", divide by 1000&#xD;
+polling_interval = 7    # default is 7 seconds</Overview>
+  <Category>Tools:</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/djismgaming/docker-templates/main/djismGAMING/img/mbpfan.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1679516228</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires>Must run as a privileged container. </Requires>
+  <Config Name="Host Path 1" Target="/etc/mbpfan.conf" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/mbpfan/mbpfan.conf</Config>
+</Container>
