@@ -7,6 +7,7 @@
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>true</Privileged>
+  <PrivilegedReq>true</PrivilegedReq>
   <Support>https://forums.unraid.net/topic/136764-support-djismgaming-mbpfan-a-fan-controller-for-macs-running-linux/</Support>
   <Project>https://github.com/linux-on-mac/mbpfan</Project>
   <Overview>Containerized mbpfan (for Macs running Linux, to control fans)&#xD;
