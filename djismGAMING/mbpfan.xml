@@ -16,16 +16,8 @@ Uses the Ubuntu repository version of https://github.com/linux-on-mac/mbpfan&#xD
 &#xD;
 Need to create a configuration file with the following contents and mount it in the container as a volume in the container under /etc/mbpfan.conf:&#xD;
 &#xD;
-File contents of /mnt/user/appdata/mbpfan/mbpfan.conf (example on a Late 2012 i7 Mac mini):&#xD;
-&#xD;
-[general]&#xD;
-# see https://ineed.coffee/3838/a-beginners-tutorial-for-mbpfan-under-ubuntu for the values&#xD;
-min_fan_speed = 1800    # put the *lowest* value of "cat /sys/devices/platform/applesmc.768/fan*_min"&#xD;
-max_fan_speed = 5500    # put the *highest* value of "cat /sys/devices/platform/applesmc.768/fan*_max"&#xD;
-low_temp = 55            # try ranges 55-63, default is 63&#xD;
-high_temp = 66            # try ranges 58-66, default is 66&#xD;
-max_temp = 87            # take highest number returned by "cat /sys/devices/platform/coretemp.*/hwmon/hwmon*/temp*_max", divide by 1000&#xD;
-polling_interval = 7    # default is 7 seconds</Overview>
+File contents of /mnt/user/appdata/mbpfan/mbpfan.conf (example on a Late 2012 i7 Mac mini) is available at:&#xD;
+https://github.com/bplein/mbpfan/blob/master/etc/mbpfan.conf</Overview>
   <Category>Tools:</Category>
   <WebUI/>
   <TemplateURL/>
@@ -33,7 +25,7 @@ polling_interval = 7    # default is 7 seconds</Overview>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1679516228</DateInstalled>
+  <DateInstalled>1679530332</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Requires>Must run as a privileged container. </Requires>
