@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>obsidian-remote</Name>
+  <Repository>braintobytes/obsidian-remote</Repository>
+  <Registry>https://hub.docker.com/r/braintobytes/obsidian-remote</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://forums.unraid.net/topic/138120-support-djismgaming-obsidian-a-second-brain-using-plain-text-files/</Support>
+  <Project>https://github.com/BraintoByte/obsidian-remote</Project>
+  <Overview>Obsidian is a powerful knowledge base on top of a local folder of plain text Markdown files.&#xD;
+&#xD;
+NOTES:&#xD;
+- When creating a vault, place it under '/vaults' dir, located in the root of the container (inside Obsidian).&#xD;
+&#xD;
+This docker image allows you to run THE LATESTS VERSION OF OBSIDIAN in docker as a container and access it via your web browser.&#xD;
+&#xD;
+The original project was from sytone/obsidian-remote and it seemed deprecated as it was not running the latest version of Obsidian as this one does.&#xD;
+&#xD;
+SECURITY: &#xD;
+By no means this is secure for public exposure, it's full of security holes and RDP tricks that can be used against you, so if you do download it and run it, don't expose to the public interwebs! Do not expose this to the web unless you secure it with something like Authelia or a similar authentication processe and know what you are doing!!</Overview>
+  <Category>Productivity: Tools:Utilities</Category>
+  <WebUI>http://[IP]:[PORT:8080]</WebUI>
+  <Icon>https://raw.githubusercontent.com/djismgaming/docker-templates/main/djismGAMING/img/obsidian.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <Requires/>
+  <Config Name="WebUI" Target="8080" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">8585</Config>
+  <Config Name="Storage (vaults)" Target="/vaults" Default="" Mode="rw" Description="This is the location for the user's vaults." Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/obsidian/vaults</Config>
+  <Config Name="Storage (config)" Target="/config/.config/obsidian" Default="" Mode="rw" Description="This is the location for the internal data." Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/obsidian/config</Config>
+  <Config Name="PUID" Target="PUID" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+</Container>
