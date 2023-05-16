@@ -7,7 +7,7 @@
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
-  <Support/>
+  <Support>https://forums.unraid.net/topic/139301-support-djismgaming-transmission-tracker-add-to-add-more-trackers-to-torrents/</Support>
   <Project>https://github.com/AndrewMarchukov/tracker-add</Project>
   <Overview>tracker-add&#xD;
 &#xD;
@@ -23,7 +23,7 @@ This script automatically checks new torrents and adds trackers&#xD;
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1684242108</DateInstalled>
+  <DateInstalled>1684244962</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Requires/>
