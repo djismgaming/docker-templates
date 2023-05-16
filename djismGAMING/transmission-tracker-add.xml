@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>transmission-tracker-add</Name>
+  <Repository>andrewmhub/transmission-tracker-add</Repository>
+  <Registry>https://hub.docker.com/r/andrewmhub/transmission-tracker-add</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project>https://github.com/AndrewMarchukov/tracker-add</Project>
+  <Overview>tracker-add&#xD;
+&#xD;
+Get more trackers, get more seeders, get more peers for transmission&#xD;
+&#xD;
+See no peers,seeds for some torrent(s)? Add more tracker(s) for Transmission&#xD;
+This script automatically checks new torrents and adds trackers&#xD;
+</Overview>
+  <Category>Downloaders:</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://unpkg.com/@tabler/icons-png@2.0.0-beta/icons/playlist-add.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1684242108</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="HOSTPORT" Target="HOSTPORT" Default="" Mode="" Description="Transmission hostname/container name/IP address with connection port" Type="Variable" Display="always" Required="false" Mask="false">transmission:9091</Config>
+  <Config Name="TR_AUTH" Target="TR_AUTH" Default="" Mode="" Description="Authentication data for the Transmission host set in variable HOSTPORT. Use user:pass style for the entry" Type="Variable" Display="always" Required="false" Mask="false">admin:pass</Config>
+  <Config Name="TORRENTLIST" Target="TORRENTLIST" Default="" Mode="" Description="Torrent tracker list to add to all torrents in the host set in HOSTPORT" Type="Variable" Display="always" Required="false" Mask="false">https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_all_ip.txt</Config>
+</Container>
