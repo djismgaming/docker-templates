@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>cleanuperr</Name>
+  <Repository>flaminel/cleanuperr:1.1.0</Repository>
+  <Registry>https://hub.docker.com/r/flaminel/cleanuperr</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://forums.unraid.net/topic/179551-support-djismgaming-cleanuperr-malicious-torrent-clean-up-tool/</Support>
+  <Project>https://github.com/flmorg/cleanuperr</Project>
+  <Overview>## Introducing cleanuperr&#xD;
+&#xD;
+How it works&#xD;
+1. Add excluded file names to prevent malicious files from being downloaded by qBittorrent.&#xD;
+2. cleanuperr goes through all items in Sonarr's queue at every 5th minute.&#xD;
+3. For each queue item, a call is made to qBittorrent to get the stats of the torrent.&#xD;
+4. If a torrent is found to be marked as completed, but with 0 downloaded bytes, cleanuperr calls Sonarr to add that torrent to the blocklist.&#xD;
+5. If any malicious torrents have been found, cleanuperr calls Sonarr to automatically search again.&#xD;
+&#xD;
+## Environment variables&#xD;
+&#xD;
+Multiple Sonarr/Radarr instances can be specified using this format:&#xD;
+&#xD;
+SONARR__INSTANCES____URL&#xD;
+SONARR__INSTANCES____APIKEY&#xD;
+where  starts from 0.&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+</Overview>
+  <Category>Tools: MediaApp:Video</Category>
+  <WebUI/>
+  <TemplateURL>https://raw.githubusercontent.com/djismgaming/docker-templates/master/djismGAMING/storm.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/djismgaming/docker-templates/refs/heads/main/djismGAMING/img/trash-guides.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1731601200</DateInstalled>
+  <DonateText>If I helped you in some way, please consider Donating.</DonateText>
+  <DonateLink>https://www.paypal.com/paypalme/isma</DonateLink>
+  <Requires/>
+  <Config Name="TRIGGERS__QUEUECLEANER" Target="TRIGGERS__QUEUECLEANER" Default="0 0/5 * * * ?" Mode="" Description="Quartz cron trigger&#13;&#10;&#13;&#10;https://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html" Type="Variable" Display="always" Required="false" Mask="false">0 0/5 * * * ?</Config>
+  <Config Name="QBITTORRENT__URL" Target="QBITTORRENT__URL" Default="http://localhost:8080" Mode="" Description="qBittorrent instance url" Type="Variable" Display="always" Required="true" Mask="false">http://localhost:8080</Config>
+  <Config Name="QBITTORRENT__USERNAME" Target="QBITTORRENT__USERNAME" Default="" Mode="" Description="qBittorrent user" Type="Variable" Display="always" Required="true" Mask="false">admin</Config>
+  <Config Name="QBITTORRENT__PASSWORD" Target="QBITTORRENT__PASSWORD" Default="" Mode="" Description="qBittorrent password" Type="Variable" Display="always" Required="true" Mask="false">djism3562p</Config>
+  <Config Name="SONARR__ENABLED" Target="SONARR__ENABLED" Default="false|true" Mode="" Description="Whether Sonarr cleanup is enabled or not" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="SONARR__INSTANCES__0__URL" Target="SONARR__INSTANCES__0__URL" Default="http://localhost:8989" Mode="" Description="First Sonarr instance url" Type="Variable" Display="always" Required="true" Mask="false">http://localhost:8989</Config>
+  <Config Name="SONARR__INSTANCES__0__APIKEY" Target="SONARR__INSTANCES__0__APIKEY" Default="apikey" Mode="" Description="First Sonarr instance API key" Type="Variable" Display="always" Required="true" Mask="false">apikey</Config>
+  <Config Name="RADARR__ENABLED" Target="RADARR__ENABLED" Default="false|true" Mode="" Description="Whether Radarr cleanup is enabled or not" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="RADARR__INSTANCES__0__URL" Target="RADARR__INSTANCES__0__URL" Default="http://localhost:8989" Mode="" Description="First Radarr instance url" Type="Variable" Display="always" Required="true" Mask="false">http://localhost:8989</Config>
+  <Config Name="RADARR__INSTANCES__0__APIKEY" Target="RADARR__INSTANCES__0__APIKEY" Default="apikey" Mode="" Description="First Radarr instance API key" Type="Variable" Display="always" Required="true" Mask="false">apikey</Config>
+</Container>
