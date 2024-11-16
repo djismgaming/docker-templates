@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>cleanuperr</Name>
-  <Repository>flaminel/cleanuperr:1.1.0</Repository>
+  <Repository>flaminel/cleanuperr:latest</Repository>
   <Registry>https://hub.docker.com/r/flaminel/cleanuperr</Registry>
   <Network>bridge</Network>
   <MyIP/>
