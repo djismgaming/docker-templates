@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Container version="2">
+  <Container version="2">
   <Name>cleanuperr</Name>
   <Repository>flaminel/cleanuperr:latest</Repository>
   <Registry>https://hub.docker.com/r/flaminel/cleanuperr</Registry>
@@ -26,21 +26,14 @@ SONARR__INSTANCES____URL&#xD;
 SONARR__INSTANCES____APIKEY&#xD;
 where  starts from 0.&#xD;
 &#xD;
-&#xD;
-&#xD;
-&#xD;
 </Overview>
   <Category>Tools: MediaApp:Video</Category>
-  <WebUI/>
-  <TemplateURL>https://raw.githubusercontent.com/djismgaming/docker-templates/master/djismGAMING/storm.xml</TemplateURL>
+  <WebUI/></WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/djismgaming/docker-templates/master/djismGAMING/cleanuperr.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/djismgaming/docker-templates/refs/heads/main/djismGAMING/img/trash-guides.png</Icon>
-  <ExtraParams/>
-  <PostArgs/>
-  <CPUset/>
   <DateInstalled>1731601200</DateInstalled>
   <DonateText>If I helped you in some way, please consider Donating.</DonateText>
   <DonateLink>https://www.paypal.com/paypalme/isma</DonateLink>
-  <Requires/>
   <Config Name="TRIGGERS__QUEUECLEANER" Target="TRIGGERS__QUEUECLEANER" Default="0 0/5 * * * ?" Mode="" Description="Quartz cron trigger&#13;&#10;&#13;&#10;https://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html" Type="Variable" Display="always" Required="false" Mask="false">0 0/5 * * * ?</Config>
   <Config Name="QBITTORRENT__URL" Target="QBITTORRENT__URL" Default="http://localhost:8080" Mode="" Description="qBittorrent instance url" Type="Variable" Display="always" Required="true" Mask="false">http://localhost:8080</Config>
   <Config Name="QBITTORRENT__USERNAME" Target="QBITTORRENT__USERNAME" Default="" Mode="" Description="qBittorrent user" Type="Variable" Display="always" Required="true" Mask="false">admin</Config>
