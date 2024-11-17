@@ -4,7 +4,6 @@
   <Repository>flaminel/cleanuperr:latest</Repository>
   <Registry>https://hub.docker.com/r/flaminel/cleanuperr</Registry>
   <Network>bridge</Network>
-  <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
   <Support>https://forums.unraid.net/topic/179551-support-djismgaming-cleanuperr-malicious-torrent-clean-up-tool/</Support>
@@ -28,7 +27,6 @@ where  starts from 0.&#xD;
 &#xD;
 </Overview>
   <Category>Tools: MediaApp:Video</Category>
-  <WebUI/></WebUI>
   <TemplateURL>https://raw.githubusercontent.com/djismgaming/docker-templates/master/djismGAMING/cleanuperr.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/djismgaming/docker-templates/refs/heads/main/djismGAMING/img/trash-guides.png</Icon>
   <DateInstalled>1731601200</DateInstalled>
