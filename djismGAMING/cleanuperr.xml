@@ -24,27 +24,27 @@ Multiple Sonarr/Radarr instances can be specified using this format:&#xD;
 &#xD;
 SONARR__INSTANCES____URL&#xD;
 SONARR__INSTANCES____APIKEY&#xD;
-where  starts from 0.&#xD;
-&#xD;
-&#xD;
-&#xD;
-&#xD;
-</Overview>
-  <Category>Tools: MediaApp:Video</Category>
+where  starts from 0.</Overview>
+  <Category>Tools:Utilities MediaApp:Video</Category>
   <WebUI/>
-  <TemplateURL>https://raw.githubusercontent.com/djismgaming/docker-templates/master/djismGAMING/storm.xml</TemplateURL>
+  <TemplateURL>https://raw.githubusercontent.com/djismgaming/docker-templates/master/djismGAMING/cleanuperr.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/djismgaming/docker-templates/refs/heads/main/djismGAMING/img/trash-guides.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1731601200</DateInstalled>
-  <DonateText>If I helped you in some way, please consider Donating.</DonateText>
+  <DateInstalled>1732041480</DateInstalled>
+  <DonateText>If I helped you in some way, you could consider donating.</DonateText>
   <DonateLink>https://www.paypal.com/paypalme/isma</DonateLink>
   <Requires/>
-  <Config Name="TRIGGERS__QUEUECLEANER" Target="TRIGGERS__QUEUECLEANER" Default="0 0/5 * * * ?" Mode="" Description="Quartz cron trigger&#13;&#10;&#13;&#10;https://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html" Type="Variable" Display="always" Required="false" Mask="false">0 0/5 * * * ?</Config>
+  <Config Name="LOGGING__LOGLEVEL__DEFAULT" Target="LOGGING__LOGLEVEL__DEFAULT" Default="Information|Debug|Warning|Error" Mode="" Description="Can be Debug, Information, Warning or Error" Type="Variable" Display="always" Required="false" Mask="false">Information</Config>
+  <Config Name="QUEUECLEANER__ENABLED" Target="TRIGGERS__QUEUECLEANER" Default="true|false" Mode="" Description="Enable or disable the queue cleaner" Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="TRIGGERS__QUEUECLEANER" Target="TRIGGERS__QUEUECLEANER" Default="0 0/5 * * * ?" Mode="" Description="Required if content blocker is enabled - Quartz cron trigger&#13;&#10;&#13;&#10;https://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html" Type="Variable" Display="always" Required="false" Mask="false">0 0/5 * * * ?</Config>
+  <Config Name="CONTENTBLOCKER__ENABLED" Target="CONTENTBLOCKER__ENABLED" Default="false|true" Mode="" Description="Enable or disable the content blocker" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="TRIGGERS__CONTENTBLOCKER" Target="TRIGGERS__CONTENTBLOCKER" Default="0 0/5 * * * ?" Mode="" Description="Required if content blocker is enabled - Quartz cron trigger&#13;&#10;&#13;&#10;https://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html" Type="Variable" Display="always" Required="false" Mask="false">0 0/5 * * * ?</Config>
+
   <Config Name="QBITTORRENT__URL" Target="QBITTORRENT__URL" Default="http://localhost:8080" Mode="" Description="qBittorrent instance url" Type="Variable" Display="always" Required="true" Mask="false">http://localhost:8080</Config>
-  <Config Name="QBITTORRENT__USERNAME" Target="QBITTORRENT__USERNAME" Default="" Mode="" Description="qBittorrent user" Type="Variable" Display="always" Required="true" Mask="false">admin</Config>
-  <Config Name="QBITTORRENT__PASSWORD" Target="QBITTORRENT__PASSWORD" Default="" Mode="" Description="qBittorrent password" Type="Variable" Display="always" Required="true" Mask="false">djism3562p</Config>
+  <Config Name="QBITTORRENT__USERNAME" Target="QBITTORRENT__USERNAME" Default="" Mode="" Description="qBittorrent user" Type="Variable" Display="always" Required="true" Mask="false">user</Config>
+  <Config Name="QBITTORRENT__PASSWORD" Target="QBITTORRENT__PASSWORD" Default="" Mode="" Description="qBittorrent password" Type="Variable" Display="always" Required="true" Mask="false">pass</Config>
   <Config Name="SONARR__ENABLED" Target="SONARR__ENABLED" Default="false|true" Mode="" Description="Whether Sonarr cleanup is enabled or not" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
   <Config Name="SONARR__INSTANCES__0__URL" Target="SONARR__INSTANCES__0__URL" Default="http://localhost:8989" Mode="" Description="First Sonarr instance url" Type="Variable" Display="always" Required="true" Mask="false">http://localhost:8989</Config>
   <Config Name="SONARR__INSTANCES__0__APIKEY" Target="SONARR__INSTANCES__0__APIKEY" Default="apikey" Mode="" Description="First Sonarr instance API key" Type="Variable" Display="always" Required="true" Mask="false">apikey</Config>
