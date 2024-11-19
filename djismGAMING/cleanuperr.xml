@@ -24,7 +24,8 @@ Multiple Sonarr/Radarr instances can be specified using this format:&#xD;
 &#xD;
 SONARR__INSTANCES____URL&#xD;
 SONARR__INSTANCES____APIKEY&#xD;
-where  starts from 0.</Overview>
+where  starts from 0.
+</Overview>
   <Category>Tools:Utilities MediaApp:Video</Category>
   <WebUI/>
   <TemplateURL>https://raw.githubusercontent.com/djismgaming/docker-templates/master/djismGAMING/cleanuperr.xml</TemplateURL>
@@ -51,4 +52,7 @@ where  starts from 0.</Overview>
   <Config Name="RADARR__ENABLED" Target="RADARR__ENABLED" Default="false|true" Mode="" Description="Whether Radarr cleanup is enabled or not" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
   <Config Name="RADARR__INSTANCES__0__URL" Target="RADARR__INSTANCES__0__URL" Default="http://localhost:8989" Mode="" Description="First Radarr instance url" Type="Variable" Display="always" Required="true" Mask="false">http://localhost:8989</Config>
   <Config Name="RADARR__INSTANCES__0__APIKEY" Target="RADARR__INSTANCES__0__APIKEY" Default="apikey" Mode="" Description="First Radarr instance API key" Type="Variable" Display="always" Required="true" Mask="false">apikey</Config>
+  <Changes>&#xD;
+  2024.11.19 - added new variables to container for shceduling tasks&#xD;
+  &#xD;</Changes>
 </Container>
