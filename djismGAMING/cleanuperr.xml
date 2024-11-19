@@ -63,10 +63,10 @@ where NUMBER starts from 0.&#xD;
   <Config Name="RADARR__ENABLED" Target="RADARR__ENABLED" Default="false|true" Mode="" Description="Whether Radarr cleanup is enabled or not" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
   <Config Name="RADARR__INSTANCES__0__URL" Target="RADARR__INSTANCES__0__URL" Default="http://localhost:8989" Mode="" Description="First Radarr instance url" Type="Variable" Display="always" Required="false" Mask="false">http://localhost:8989</Config>
   <Config Name="RADARR__INSTANCES__0__APIKEY" Target="RADARR__INSTANCES__0__APIKEY" Default="apikey" Mode="" Description="First Radarr instance API key" Type="Variable" Display="always" Required="false" Mask="false">apikey</Config>
-  <Changes>Template updates&#xD;
-### 2024.11.19&#xD;
+  <Changes>
+2024.11.19&#xD;
 - added new variables for scheduling tasks&#xD;
 - added new variables for content blocker config&#xD;
 - added new variables for deluge and transmission config&#xD;
-### End&#xD;</Changes>
+</Changes>
 </Container>
