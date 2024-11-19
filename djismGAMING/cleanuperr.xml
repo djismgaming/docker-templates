@@ -11,20 +11,20 @@
   <Project>https://github.com/flmorg/cleanuperr</Project>
   <Overview>## Introducing cleanuperr&#xD;
 &#xD;
-How it works&#xD;
-1. Add excluded file names to prevent malicious files from being downloaded by qBittorrent.&#xD;
-2. cleanuperr goes through all items in Sonarr's queue at every 5th minute.&#xD;
-3. For each queue item, a call is made to qBittorrent to get the stats of the torrent.&#xD;
-4. If a torrent is found to be marked as completed, but with 0 downloaded bytes, cleanuperr calls Sonarr to add that torrent to the blocklist.&#xD;
-5. If any malicious torrents have been found, cleanuperr calls Sonarr to automatically search again.&#xD;
+### How it works
+1. Add excluded file names to prevent malicious files from being downloaded by qBittorrent.
+2. cleanuperr goes through all items in Sonarr's queue at every 5th minute.
+3. For each queue item, a call is made to qBittorrent to get the stats of the torrent.
+4. If a torrent is found to be marked as completed, but with 0 downloaded bytes, cleanuperr calls Sonarr to add that torrent to the blocklist.
+5. If any malicious torrents have been found, cleanuperr calls Sonarr to automatically search again.
 &#xD;
-## Environment variables&#xD;
+### Environment variables&#xD;
 &#xD;
 Multiple Sonarr/Radarr instances can be specified using this format:&#xD;
 &#xD;
-SONARR__INSTANCES____URL&#xD;
-SONARR__INSTANCES____APIKEY&#xD;
-where  starts from 0.
+SONARR__INSTANCES__NUMBER__URL&#xD;
+SONARR__INSTANCES__NUMBER__APIKEY&#xD;
+where NUMBER starts from 0.&#xD;
 </Overview>
   <Category>Tools:Utilities MediaApp:Video</Category>
   <WebUI/>
@@ -42,16 +42,31 @@ where  starts from 0.
   <Config Name="TRIGGERS__QUEUECLEANER" Target="TRIGGERS__QUEUECLEANER" Default="0 0/5 * * * ?" Mode="" Description="Required if content blocker is enabled - Quartz cron trigger&#13;&#10;&#13;&#10;https://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html" Type="Variable" Display="always" Required="false" Mask="false">0 0/5 * * * ?</Config>
   <Config Name="CONTENTBLOCKER__ENABLED" Target="CONTENTBLOCKER__ENABLED" Default="false|true" Mode="" Description="Enable or disable the content blocker" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
   <Config Name="TRIGGERS__CONTENTBLOCKER" Target="TRIGGERS__CONTENTBLOCKER" Default="0 0/5 * * * ?" Mode="" Description="Required if content blocker is enabled - Quartz cron trigger&#13;&#10;&#13;&#10;https://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html" Type="Variable" Display="always" Required="false" Mask="false">0 0/5 * * * ?</Config>
-
-  <Config Name="QBITTORRENT__URL" Target="QBITTORRENT__URL" Default="http://localhost:8080" Mode="" Description="qBittorrent instance url" Type="Variable" Display="always" Required="true" Mask="false">http://localhost:8080</Config>
-  <Config Name="QBITTORRENT__USERNAME" Target="QBITTORRENT__USERNAME" Default="" Mode="" Description="qBittorrent user" Type="Variable" Display="always" Required="true" Mask="false">user</Config>
-  <Config Name="QBITTORRENT__PASSWORD" Target="QBITTORRENT__PASSWORD" Default="" Mode="" Description="qBittorrent password" Type="Variable" Display="always" Required="true" Mask="false">pass</Config>
+  <Config Name="CONTENTBLOCKER__BLACKLIST__ENABLED" Target="CONTENTBLOCKER__BLACKLIST__ENABLED" Default="false|true" Mode="" Description="Enable or disable the blacklist" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="CONTENTBLOCKER__BLACKLIST__PATH" Target="CONTENTBLOCKER__BLACKLIST__PATH" Default="" Mode="" Description="Path to the blacklist (local file or url); Needs to be json compatible" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="CONTENTBLOCKER__WHITELIST__ENABLED" Target="CONTENTBLOCKER__WHITELIST__ENABLED" Default="false|true" Mode="" Description="Enable or disable the whitelist" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="CONTENTBLOCKER__WHITELIST__PATH" Target="CONTENTBLOCKER__WHITELIST__PATH" Default="" Mode="" Description="Path to the whitelist (local file or url); Needs to be json compatible" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="QBITTORRENT__ENABLED" Target="QBITTORRENT__ENABLED" Default="false|true" Mode="" Description="Enable or disable qBittorrent" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="QBITTORRENT__URL" Target="QBITTORRENT__URL" Default="http://localhost:8112" Mode="" Description="qBittorrent instance url" Type="Variable" Display="always" Required="false" Mask="false">http://localhost:8080</Config>
+  <Config Name="QBITTORRENT__USERNAME" Target="QBITTORRENT__USERNAME" Default="" Mode="" Description="qBittorrent user" Type="Variable" Display="always" Required="false" Mask="false">user</Config>
+  <Config Name="QBITTORRENT__PASSWORD" Target="QBITTORRENT__PASSWORD" Default="" Mode="" Description="qBittorrent password" Type="Variable" Display="always" Required="false" Mask="false">pass</Config>
+  <Config Name="DELUGE__ENABLED" Target="DELUGE__ENABLED" Default="false|true" Mode="" Description="Enable or disable Deluge" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="DELUGE__URL" Target="DELUGE__URL" Default="http://localhost:8080" Mode="" Description="Deluge instance url" Type="Variable" Display="always" Required="false" Mask="false">http://localhost:8080</Config>
+  <Config Name="DELUGE__PASSWORD" Target="DELUGE__PASSWORD" Default="" Mode="" Description="Deluge password" Type="Variable" Display="always" Required="false" Mask="false">pass</Config>
+  <Config Name="TRANSMISSION__ENABLED" Target="TRANSMISSION__ENABLED" Default="false|true" Mode="" Description="Enable or disable Transmission" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="TRANSMISSION__URL" Target="TRANSMISSION__URL" Default="http://localhost:9091" Mode="" Description="Transmission instance url" Type="Variable" Display="always" Required="false" Mask="false">http://localhost:8080</Config>
+  <Config Name="TRANSMISSION__USERNAME" Target="TRANSMISSION__USERNAME" Default="" Mode="" Description="Transmission user" Type="Variable" Display="always" Required="false" Mask="false">user</Config>
+  <Config Name="TRANSMISSION__PASSWORD" Target="TRANSMISSION__PASSWORD" Default="" Mode="" Description="Transmission password" Type="Variable" Display="always" Required="false" Mask="false">pass</Config>
   <Config Name="SONARR__ENABLED" Target="SONARR__ENABLED" Default="false|true" Mode="" Description="Whether Sonarr cleanup is enabled or not" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
-  <Config Name="SONARR__INSTANCES__0__URL" Target="SONARR__INSTANCES__0__URL" Default="http://localhost:8989" Mode="" Description="First Sonarr instance url" Type="Variable" Display="always" Required="true" Mask="false">http://localhost:8989</Config>
-  <Config Name="SONARR__INSTANCES__0__APIKEY" Target="SONARR__INSTANCES__0__APIKEY" Default="apikey" Mode="" Description="First Sonarr instance API key" Type="Variable" Display="always" Required="true" Mask="false">apikey</Config>
+  <Config Name="SONARR__INSTANCES__0__URL" Target="SONARR__INSTANCES__0__URL" Default="http://localhost:8989" Mode="" Description="First Sonarr instance url" Type="Variable" Display="always" Required="false" Mask="false">http://localhost:8989</Config>
+  <Config Name="SONARR__INSTANCES__0__APIKEY" Target="SONARR__INSTANCES__0__APIKEY" Default="apikey" Mode="" Description="First Sonarr instance API key" Type="Variable" Display="always" Required="false" Mask="false">apikey</Config>
   <Config Name="RADARR__ENABLED" Target="RADARR__ENABLED" Default="false|true" Mode="" Description="Whether Radarr cleanup is enabled or not" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
-  <Config Name="RADARR__INSTANCES__0__URL" Target="RADARR__INSTANCES__0__URL" Default="http://localhost:8989" Mode="" Description="First Radarr instance url" Type="Variable" Display="always" Required="true" Mask="false">http://localhost:8989</Config>
-  <Config Name="RADARR__INSTANCES__0__APIKEY" Target="RADARR__INSTANCES__0__APIKEY" Default="apikey" Mode="" Description="First Radarr instance API key" Type="Variable" Display="always" Required="true" Mask="false">apikey</Config>
-  <Changes>2024.11.19 - added new variables to container for shceduling tasks&#xD;
-  &#xD;</Changes>
+  <Config Name="RADARR__INSTANCES__0__URL" Target="RADARR__INSTANCES__0__URL" Default="http://localhost:8989" Mode="" Description="First Radarr instance url" Type="Variable" Display="always" Required="false" Mask="false">http://localhost:8989</Config>
+  <Config Name="RADARR__INSTANCES__0__APIKEY" Target="RADARR__INSTANCES__0__APIKEY" Default="apikey" Mode="" Description="First Radarr instance API key" Type="Variable" Display="always" Required="false" Mask="false">apikey</Config>
+  <Changes>Template updates&#xD;
+### 2024.11.19&#xD;
+- added new variables for scheduling tasks&#xD;
+- added new variables for content blocker config&#xD;
+- added new variables for deluge and transmission config&#xD;
+### End&#xD;</Changes>
 </Container>
