@@ -67,6 +67,5 @@ where NUMBER starts from 0.&#xD;
 2024.11.19&#xD;
 - added new variables for scheduling tasks&#xD;
 - added new variables for content blocker config&#xD;
-- added new variables for deluge and transmission config&#xD;
-</Changes>
+- added new variables for deluge and transmission config</Changes>
 </Container>
